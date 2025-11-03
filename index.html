@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Apurva Ravikar Chavan — GrowthX Application</title>
+  <title>Apurva Ravikar Chavan — Big Data Rhino Application</title>
   <style>
     :root{
       --bg:#0b0f19;
@@ -71,61 +71,65 @@
   .case-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
   @media (max-width:900px){.case-grid{grid-template-columns:1fr}}
   .metric{background:#0e1630; border:1px solid #243157; border-radius:12px; padding:10px}
+    /* Colorful theme variables when body has .color */
+  body.color{ --bg:#0a0516; --card:#18122B; --muted:#9cb3ff; --text:#F3F4FF; --accent:#FF7EDB; --chip:#2B1748; --good:#7CF8A9; }
+  body.color{ background: radial-gradient(900px 500px at 10% -10%, #2e1455 0, transparent 60%),
+                         radial-gradient(700px 400px at 110% -20%, #1b6cff33 0, transparent 60%),
+                         linear-gradient(180deg,#0a0516 0,#0b0f19 100%); }
+  .chip.rainbow{ background:linear-gradient(135deg,#5b8cff, #ff7edb 50%, #7cf8a9); border:0; color:#0b0f19; font-weight:700 }
+  .card.border-glow{ border:1px solid transparent; background:linear-gradient(var(--card), var(--card)) padding-box,
+                                          linear-gradient(135deg,#5b8cff,#ff7edb,#7cf8a9) border-box; }
+  #toggleColor{ background:#0e1630; border:1px solid #243157; color:#cdd9ff; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600 }
   </style>
 </head>
-<body>
+<body class="color">
   <header>
-    <span class="pill">📈 GrowthX Application</span>
+    <span class="pill">🦏 Big Data Rhino — Data Scientist & Analytics Expert</span>
     <h1>Apurva Ravikar Chavan</h1>
     <p class="sub">Data Scientist • ML Engineer — end-to-end ML, analytics, experimentation, and production pipelines.</p>
     <div class="links">
       <a href="mailto:apurvachavan125@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/apurvachavan125/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/Apurva1205" target="_blank" rel="noopener">GitHub</a>
-      <a href="#answers">Skip to Answers ↓</a>
-      <button id="copyAnswers" type="button">Copy Answers</button>
-      <button id="downloadHtml" type="button">Download HTML</button>
-      <button id="printPdf" type="button">Print / Save PDF</button>
     </div>
   </header>
 
   <main class="grid">
-  <section class="card">
-    <h2 id="answers">Two Approaches — Pick Your Style</h2>
+  <section class="card border-glow">
+        <h2 style="margin-top:8px">Why Big Data Rhino</h2>
+    <p>Big Data Rhino supports public‑sector and healthcare programs with <b>enterprise data warehousing, predictive analytics, and BI</b>. That aligns with my experience building <b>ETL/ELT pipelines</b> (dbt/Airflow), modeling at scale (Spark, PyTorch/sklearn), and shipping <b>Power BI/Tableau</b> dashboards for decision‑makers while meeting governance requirements (PHI handling, audit trails, cost controls).</p>
 
-    <div class="tabs">
-      <button class="tabBtn active" data-tab="concise">Concise Q&A</button>
-      <button class="tabBtn" data-tab="metrics">Metrics-First Case Study</button>
+    <h3>Pitch — <em>Public Sector Analytics Accelerator</em> (DW · ML · BI)</h3>
+    <ul>
+      <li><b>30 days:</b> Stand up a <i>clean room</i> project in AWS/Azure/GCP; ingest Medicaid/claims extracts; build dbt models for member, provider, eligibility, and encounters; publish a <i>baseline KPI pack</i> in Power BI/Tableau (enrollment, utilization, denial rates).</li>
+      <li><b>60 days:</b> Train and validate predictive models (readmission risk, churn/eligibility churn, no‑show propensity) using Spark + sklearn/TF; wire MLflow for experiment tracking; create <i>reproducible backtests</i> and data quality monitors.</li>
+      <li><b>90 days:</b> Roll out <i>scheduled dashboards</i> and <i>alerting</i> (SLA breaches, anomaly detection); harden lineage (dbt docs), access policies, and cost/refresh SLAs; deliver a <i>playbook</i> for new programs.</li>
+    </ul>
+
+    <h3>How I Fit the Role</h3>
+    <ul>
+      <li><b>Python · R · SQL · Spark:</b> end‑to‑end pipelines; feature stores; scalable model training.</li>
+      <li><b>ML:</b> classification/forecasting (RF/GBM/NN), survival analysis, clustering for cohort discovery.</li>
+      <li><b>ETL/ELT:</b> dbt, Airflow/Prefect; star/snowflake schemas; data quality tests and lineage.</li>
+      <li><b>BI:</b> Power BI/Tableau semantic models, KPI definitions, drill‑through narratives.</li>
+      <li><b>Cloud:</b> AWS/Azure/GCP (S3/ADLS, Redshift/BigQuery/Snowflake), containers, CI/CD.</li>
+      <li><b>Governance:</b> PHI handling, role‑based access, audit logs; cost/refresh SLAs.</li>
+    </ul>
+
+    <div class="kpi">
+      <div><b>Model lift ↑</b>Readmission/propensity</div>
+      <div><b>KPI coverage ↑</b>Enrl/Util/Denials</div>
+      <div><b>p95 refresh ↓</b>Dash latency & $</div>
     </div>
 
-    <div id="concise" class="tab-panel active">
-      <p class="q">1) Large, complex dataset — approach & modeling</p>
-      <div class="a">
-        <p><b>Energy Load Forecasting</b> across multi-year telemetry + weather. I designed a <i>columnar, partitioned</i> lake (Parquet on S3) with schema/quality checks, built features for seasonality, weather lags, and recent trends, and trained <span class="mono">LSTM</span> (sequences) + <span class="mono">GBM</span> (tabular). I evaluated via <i>rolling-origin backtests</i> with MAPE/MAE per region and a <i>cost-weighted</i> loss. Ship-ready ops: containerized inference, scheduled retrains, and drift monitoring.</p>
-      </div>
-
-      <p class="q">2) ML technique → business outcome</p>
-      <div class="a">
-        <p><b>Resume↔Job Matcher</b> using two-tower <span class="mono">sentence-transformers</span> embeddings + logistic re-ranker. Tools: <span class="mono">Python, pandas, scikit-learn, PyTorch, FastAPI</span>. I aligned with KPIs (<i>top‑k recall, accept‑rate, time‑to‑shortlist</i>) and A/B‑tested thresholds; dashboards tracked failure modes and inference cost.</p>
-      </div>
-
-      <p class="q">3) Keeping up with LLM eval & prompts</p>
-      <div class="a">
-        <p>Run <i>task-specific eval harnesses</i> with golden sets, regression suites on prompt diffs, and track <span class="mono">quality × cost</span>. I read new eval papers/repos, and apply <i>operational guardrails</i> (reversible actions, red‑teaming) before rollout.</p>
-      </div>
+    <h3 style="margin-top:14px">Short note to Big Data Rhino</h3>
+    <div class="a">
+      <p>Team BDR, I love the focus on <b>healthcare and public‑sector impact</b>. I’ve shipped governed analytics stacks (dbt+Airflow → MLflow → Power BI/Tableau) with clear lineage and PHI safeguards. I’d like to help you deliver <i>repeatable, auditable</i> analytics that program leaders trust.</p>
     </div>
 
-    <div id="metrics" class="tab-panel">
-      <h3 style="margin-top:6px">LLM Search Visibility — Mini Case Study (GrowthX‑style)</h3>
-      <p><b>Goal:</b> define and ship measurement for a client's brand presence in LLM answers, then use experiments to improve it.</p>
-      <div class="case-grid">
-        <div class="metric"><b>Dataset & Taxonomy</b><br/>Seed queries → dedup → label intents (how‑to, compare, transactional). Sample by segment to avoid bias.</div>
-        <div class="metric"><b>Core Metrics</b><br/>Presence@k, Coverage (% queries answered), Share‑of‑Voice, Answer Quality (rubric), Cost/Qualified‑Answer.</div>
-        <div class="metric"><b>Eval Harness</b><br/>Deterministic prompts + rubric graders; regression suite on each prompt/model change; budget caps.
-        </div>
-        <div class="metric"><b>Experiments</b><br/>A/B content clusters, schema tweaks, retrieval snippets; analyze lift vs. cost and latency.</div>
-      </div>
-      <p style="margin-top:8px"><b>Impact loop:</b> weekly dashboards (SoV, quality buckets), PRDs for wins, and guardrails for hallucinations/tool‑use.</p>
+    <h3 style="margin-top:14px">Wellfound Prompt — “What interests you about working for this company?”</h3>
+    <div class="a">
+      <p><b>Answer:</b> Big Data Rhino operates where data work matters most—healthcare and public programs. The emphasis on large‑scale data warehouses, predictive analytics, and BI aligns with my background in <b>dbt/Airflow, Spark, MLflow</b>, and <b>Power BI/Tableau</b>. I’m motivated by measurable outcomes: better eligibility accuracy, earlier risk identification, and dashboards that program leads actually use.</p>
     </div>
   </section>
 
@@ -135,18 +139,18 @@
       <div style="width:44px; height:44px; border-radius:50%; background:#0e1630; border:1px solid #243157; display:flex; align-items:center; justify-content:center; font-weight:800;">AC</div>
       <div>
         <div style="font-weight:700;">Apurva Ravikar Chavan</div>
-        <div style="color:#93a4bf; font-size:13px;">Data Scientist / ML Engineer · Remote US</div>
+        <div style="color:#93a4bf; font-size:13px;">Data Scientist / ML Engineer</div>
         <div style="font-size:13px; margin-top:4px"><a href="mailto:apurvachavan125@gmail.com">apurvachavan125@gmail.com</a> · <a href="https://www.linkedin.com/in/apurvachavan125/" target="_blank">LinkedIn</a> · <a href="https://github.com/Apurva1205" target="_blank">GitHub</a></div>
       </div>
     </div>
     <div class="chips">
-      <span class="chip">End‑to‑end ML</span>
-      <span class="chip">Experimentation</span>
-      <span class="chip">Taxonomies & Sampling</span>
-      <span class="chip">LLM Evals</span>
-      <span class="chip">SQL & Python</span>
-      <span class="chip">Airflow/dbt</span>
-      <span class="chip">AWS/GCP</span>
+      <span class="chip">Healthcare Analytics</span>
+      <span class="chip">Data Warehousing</span>
+      <span class="chip">dbt · Airflow</span>
+      <span class="chip">Spark</span>
+      <span class="chip">Power BI · Tableau</span>
+      <span class="chip">MLflow</span>
+      <span class="chip">AWS/Azure/GCP</span>
     </div>
 
     <h3>Signals</h3>
@@ -156,14 +160,28 @@
       <li>Comfortable in ambiguous, fast product cycles.</li>
     </ul>
 
-    <h2 style="margin-top:14px">Idea Pitch — Grow LLM Search Visibility</h2>
-    <p style="margin-top:6px">A fast, measurable plan to improve a client's brand presence inside AI answers.</p>
+    <h2 style="margin-top:14px">Experience</h2>
+    <div class="metric" style="margin-top:8px">
+      <div style="display:flex; justify-content:space-between; align-items:baseline">
+        <div><b>Data Scientist Intern</b> — Mental Model Algorithms, Ideatrix Cogn AI Lab Corp</div>
+        <div style="color:#93a4bf; font-size:12px">Jul 2025 – Present</div>
+      </div>
+      <ul style="margin-top:6px">
+        <li>Design and implement reasoning algorithms for multi‑agent dialogue games using LLMs and cognitive models.</li>
+        <li>Apply cognitive science, neuroscience, and game theory to model deception, inference, trust, and alignment.</li>
+        <li>Build tools to analyze agent behavior and belief dynamics in simulated social‑deduction games (Werewolf Arena).</li>
+        <li>Collaborate with researchers to enhance the Werewolf Mental Model Arena platform.</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top:14px">Idea Pitch — Medicaid/Healthcare KPI Suite</h2>
+    <p style="margin-top:6px">A quick‑win analytics pack for enrollment, eligibility, utilization, denials, and outcomes.</p>
     <ul>
-      <li><b>Audit & Taxonomy (Week 1):</b> Crawl seed queries; define intents (how‑to, compare, transactional); label brand/entity coverage; set sampling rules to prevent bias.</li>
-      <li><b>Eval Harness (Week 2):</b> Deterministic prompts per model; rubric graders (accuracy, attribution, actionability); regression suite on each prompt/model change; budget caps.</li>
-      <li><b>Baseline Metrics (Week 3):</b> Presence@k, Coverage, Share‑of‑Voice, Answer‑Quality, Cost/Qualified‑Answer, Latency.</li>
-      <li><b>Experiments (Weeks 4–6):</b> Content clustering, schema/FAQ rewrites, retrieval snippet tuning; A/B design with lift vs. cost tracking.</li>
-      <li><b>Guardrails:</b> hallucination checks, source‑attribution rate, and reversible tool actions for agentic workflows.</li>
+      <li><b>Audit & Model (Week 1):</b> Map sources; define semantic models (member, provider, claims); set data tests.</li>
+      <li><b>Dash (Week 2):</b> Power BI/Tableau dashboards with role‑based access and drill‑downs; define SLAs.</li>
+      <li><b>Predict (Weeks 3–4):</b> Risk/readmission propensity; backtests, calibration, and fairness checks.</li>
+      <li><b>Ops (Weeks 5–6):</b> Alerts for KPI breaches; cost controls; docs and handoff.</li>
+      <li><b>Guardrails:</b> PHI handling, lineage, and audit logs throughout.</li>
     </ul>
 
     <h3>30 / 60 / 90</h3>
@@ -187,8 +205,7 @@
       tabs.forEach(b=>b.classList.remove('active'));
       panels.forEach(p=>p.classList.remove('active'));
       btn.classList.add('active');
-      const id = btn.getAttribute('data-tab');
-      document.getElementById(id)?.classList.add('active');
+      document.getElementById(btn.dataset.tab)?.classList.add('active');
     }));
   })();
 </script>
